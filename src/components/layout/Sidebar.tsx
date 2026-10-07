@@ -68,7 +68,7 @@ export default function Sidebar() {
             <Briefcase className="w-4 h-4 text-white" />
           </div>
           <div>
-            <h1 className="text-base font-bold text-foreground tracking-tight">{t("app.title")}</h1>
+            <h1 className="font-display text-base font-bold text-foreground tracking-tight">{t("app.title")}</h1>
             <p className="text-[11px] text-muted-foreground leading-none">{t("app.tagline")}</p>
           </div>
         </div>
@@ -82,9 +82,9 @@ export default function Sidebar() {
             to={to}
             end={to === "/"}
             className={({ isActive }) =>
-              `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-semibold transition-all ${
+              `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-semibold transition-premium ${
                 isActive
-                  ? "bg-foreground text-background"
+                  ? "premium-card bg-foreground text-background"
                   : "text-muted-foreground hover:bg-secondary hover:text-foreground"
               }`
             }

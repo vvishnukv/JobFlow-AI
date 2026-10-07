@@ -77,8 +77,8 @@ export default function LoginCards() {
         return (
           <div
             key={id}
-            className={`bg-card rounded-xl border p-5 ${
-              loggedIn ? "border-green-200" : "border-amber-200"
+            className={`premium-card border-${
+              loggedIn ? "green-500" : "amber-500"
             }`}
           >
             <div className="flex items-center justify-between mb-3">

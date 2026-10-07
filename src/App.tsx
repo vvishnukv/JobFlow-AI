@@ -109,7 +109,7 @@ export default function App() {
   return (
     <div className="flex min-h-screen bg-background">
       <Sidebar />
-      <main className="flex-1 ml-60 px-10 py-8">
+      <main className="flex-1 ml-64 px-8 py-8">
         <ErrorBoundary>
           <Suspense fallback={<PageLoader />}>
             <Routes>

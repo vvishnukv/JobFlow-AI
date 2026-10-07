@@ -12,25 +12,37 @@
     <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="12" stdDeviation="24" flood-color="#000" flood-opacity="0.35" />
     </filter>
+    <filter id="innerGlow">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
+  <!-- Outer rounded square with gradient -->
   <rect x="20" y="20" width="472" height="472" rx="100" ry="100" fill="url(#bgGrad)" filter="url(#softShadow)" />
+
+  <!-- Subtle inner highlight -->
   <rect x="20" y="20" width="472" height="472" rx="100" ry="100" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
 
+  <!-- Briefcase body -->
   <rect x="104" y="176" width="304" height="200" rx="20" fill="white" />
   <rect x="104" y="176" width="304" height="64" rx="20" fill="url(#flowGrad)" />
 
+  <!-- Briefcase handle -->
   <path d="M 192 176 L 192 132 Q 192 100 224 100 L 288 100 Q 320 100 320 132 L 320 176"
         fill="none" stroke="white" stroke-width="14" stroke-linecap="round" />
 
+  <!-- Flowing checkmark path (the "flow" of job applications) -->
   <path d="M 152 272 L 216 336 L 360 192"
         fill="none" stroke="url(#flowGrad)" stroke-width="16"
-        stroke-linecap="round" stroke-linejoin="round" />
+        stroke-linecap="round" stroke-linejoin="round" filter="url(#innerGlow)" />
 
+  <!-- Flow endpoint dots -->
   <circle cx="152" cy="272" r="7" fill="url(#flowGrad)" />
   <circle cx="216" cy="336" r="7" fill="url(#flowGrad)" />
   <circle cx="360" cy="192" r="7" fill="url(#flowGrad)" />
 
+  <!-- AI sparkle accents -->
   <g fill="white" opacity="0.92">
     <path d="M 396 288 L 404 304 L 420 304 L 408 316 L 414 332 L 396 322 L 378 332 L 384 316 L 372 304 L 388 304 Z" />
     <path d="M 116 368 L 122 380 L 134 380 L 126 388 L 130 400 L 116 392 L 102 400 L 106 388 L 98 380 L 110 380 Z" />
